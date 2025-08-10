@@ -7,8 +7,7 @@ def validate_license_number(license_number):
     if len(license_number) != 8:
         raise (forms.ValidationError
                ("License number must be exactly 8 characters long."))
-    if not (license_number[:3].isalpha() and
-            license_number[:3].isupper()):
+    if not (license_number[:3].isalpha() and license_number[:3].isupper()):
         raise (forms.ValidationError
                ("First 3 characters must be uppercase letters."))
     if not license_number[3:].isdigit():
